@@ -1,0 +1,37 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #f3f4f7; --surface: #ffffff; --ink: #12141a; --muted: #5b6070; --line: #e1e3e9;
+  --brand: #2f3ddb; --brand-ink: #ffffff; --brand-soft: #e7e9fd; --hot: #e8431f;
+}
+.dark {
+  --bg: #0d0f14; --surface: #161922; --ink: #eceef3; --muted: #9aa0b0; --line: #262a35;
+  --brand: #8590ff; --brand-ink: #0d0f14; --brand-soft: #1e2240; --hot: #ff7a59;
+}
+@theme inline {
+  --color-bg: var(--bg); --color-surface: var(--surface); --color-ink: var(--ink);
+  --color-muted: var(--muted); --color-line: var(--line); --color-brand: var(--brand);
+  --color-brand-ink: var(--brand-ink); --color-brand-soft: var(--brand-soft); --color-hot: var(--hot);
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+body { background: var(--bg); color: var(--ink); font-family: var(--font-sans); }
+h1, h2, h3, .font-display { font-family: var(--font-display); letter-spacing: -0.02em; }
+:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .65rem 1.2rem;
+  border-radius: .6rem; font-weight: 600; font-size: .9rem; transition: transform .15s, background .15s, opacity .15s; cursor: pointer; }
+.btn:active { transform: scale(.97); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.btn-primary { background: var(--brand); color: var(--brand-ink); }
+.btn-primary:hover:not(:disabled) { opacity: .9; }
+.btn-ghost { border: 1px solid var(--line); background: var(--surface); }
+.btn-ghost:hover:not(:disabled) { border-color: var(--brand); }
+.btn-danger { background: var(--hot); color: #fff; }
+.input { width: 100%; padding: .65rem .85rem; border-radius: .6rem; border: 1px solid var(--line); background: var(--surface); }
+.input:focus { outline: 2px solid var(--brand); border-color: transparent; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 1rem; }
+.skeleton { background: linear-gradient(90deg, var(--line) 25%, var(--surface) 50%, var(--line) 75%); background-size: 200% 100%; animation: shimmer 1.3s infinite; border-radius: .6rem; }
+@keyframes shimmer { to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
