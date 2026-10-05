@@ -2,9 +2,6 @@
 
 **Purpose:** ArtHub connects art lovers and collectors with independent artists. Buyers browse and purchase original artworks through Stripe, artists manage and sell their work, and an admin oversees users, artworks and transactions.
 
-**Live URL:** https://your-arthub.vercel.app  *(replace after deploying)*
-**Server repo:** https://github.com/your-name/art-hub-server
-
 **Admin login:** admin@arthub.com / Admin@123
 
 ## Key features
